@@ -80,11 +80,12 @@ bool websocket_client::connect() noexcept {
         request_->cci.origin = origin_.c_str();
     }
     request_->cci.path = path_.c_str();
-    request_->cci.protocol = "wss";
+    request_->cci.protocol = "ws";
     request_->cci.pwsi = &request_->wsi;
     request_->cci.userdata = request_;
 
     if (port_ == 443) {
+        request_->cci.protocol = "wss";
         request_->cci.ssl_connection = LCCSCF_USE_SSL | LCCSCF_PRIORITIZE_READS;
     }
 
