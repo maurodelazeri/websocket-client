@@ -7,7 +7,6 @@ C++ Wrapper for https://libwebsockets.org/
 ```c++
 #include <libwebsockets.h>
 #include "src/libs/callback.h"
-#include "src/libs/socket_client.h"
 #include "src/libs/websocket_client.h"
 
 class websocket : public websocket_client, public client_callback_t {
