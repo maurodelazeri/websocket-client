@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(socket_test)
+project(websocket-client)
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)
@@ -36,9 +36,9 @@ set (LIBS
         src/libs/websocket_client.h
         src/libs/websocket_client.cpp)
 
-add_executable(socket_test main.cpp ${LIBS})
+add_executable(websocket-client main.cpp ${LIBS})
 
-target_link_libraries(socket_test
+target_link_libraries(websocket-client
         ${WEBSOCKET_LIB}
         ${OPENSSL_LIBRARIES}
         ${CMAKE_THREAD_LIBS_INIT}
