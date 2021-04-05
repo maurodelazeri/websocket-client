@@ -46,6 +46,14 @@ int main() {
 }
 ```
 
+### Testing
+
+```
+cmake .
+make
+./websocket-client
+```
+
 ```
 [2021/04/04 20:35:07:4351] N: LWS: 4.1.99-v4.1.0-361-g010c8c86, loglevel 1031
 [2021/04/04 20:35:07:4352] N: NET CLI SRV H1 H2 WS ConMon IPv6-absent
