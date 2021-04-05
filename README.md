@@ -1,7 +1,7 @@
 # websocket-client
 C++ Wrapper for https://libwebsockets.org/
 
-### Very straightforward to use, make sure you compile [libwebsockets](https://github.com/warmcat/libwebsockets) first, please note that I'm using [libwebsockets.a](https://github.com/maurodelazeri/websocket-client/blob/master/CMakeLists.txt#L22) and you might need to adjust the the path or use the shared library.
+Very straightforward to use, make sure you compile [libwebsockets](https://github.com/warmcat/libwebsockets) first, please note that I'm using the static lib [libwebsockets.a](https://github.com/maurodelazeri/websocket-client/blob/master/CMakeLists.txt#L22) and you might need to adjust the the path or use the shared library.
 
 
 ```c++
