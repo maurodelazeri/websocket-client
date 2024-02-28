@@ -14,12 +14,12 @@ else()
     add_definitions(-D_WIN32_WINNT=0x600)
 endif()
 
-set(LIB_PREFIX "/usr/local/lib")
+set(LIB_PREFIX "/usr/lib")
 
 find_package(Threads REQUIRED)
 
 find_package(Libwebsockets)
-set(WEBSOCKET_LIB "${LIB_PREFIX}/libwebsockets.a")
+set(WEBSOCKET_LIB "${LIB_PREFIX}/libwebsockets.so")
 
 find_package(OpenSSL REQUIRED)
 
@@ -36,10 +36,16 @@ set (LIBS
         src/libs/websocket_client.h
         src/libs/websocket_client.cpp)
 
-add_executable(websocket-client main.cpp ${LIBS})
+add_library(websocket_client ${LIBS})
 
-target_link_libraries(websocket-client
+target_link_libraries(websocket_client
         ${WEBSOCKET_LIB}
         ${OPENSSL_LIBRARIES}
         ${CMAKE_THREAD_LIBS_INIT}
+)
+
+add_executable(websocket-client main.cpp)
+
+target_link_libraries(websocket-client
+       websocket_client
 )
