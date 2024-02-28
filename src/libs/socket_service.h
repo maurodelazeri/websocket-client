@@ -8,6 +8,7 @@
 #include <atomic>
 #include <sstream>
 #include <functional>
+#include <memory>
 #include <unordered_set>
 #include "ring_buffer.h"
 
